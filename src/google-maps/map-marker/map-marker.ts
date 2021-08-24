@@ -116,6 +116,15 @@ export class MapMarker implements OnInit, OnChanges, OnDestroy, MapAnchorPoint {
   private _visible: boolean;
 
   /**
+   * Collision management strategy
+   * See: developers.google.com/maps/documentation/javascript/examples/marker-collision-management
+   */
+  @Input()
+  set collisionBehavior(value: any) {
+    this._collisionBehavior = value;
+  }
+  private _collisionBehavior: any;
+  /**
    * See
    * developers.google.com/maps/documentation/javascript/reference/marker#Marker.animation_changed
    */
